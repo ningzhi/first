@@ -2,16 +2,145 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>canvas制作动画</title>
-    <script type="text/javascript" src="canvas.js"></script>
-    <style type="text/css">
+    <title>自适应布局</title>
+    <style>
         body{
             margin: 0;
             padding: 0;
         }
+        div#conterbody{
+            width: 960px;
+            margin: auto;
+            color: #ffffff;
+        }
+        div#left{
+            width: 740px;
+            float: left;
+        }
+        p{
+            line-height: 600px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2em;
+            margin: 0 0 20px 0;
+        }
+        p#left-z{
+            width: 200px;
+             float: left;
+            background-color: #3760ff;
+        }
+        p#left-y{
+            width: 520px;
+            float: right;
+            background-color: #ff4eef;
+        }
+        p#right{
+            width: 200px;
+            float: right;
+            background-color: #ff6600;
+        }
+        @media screen and (min-width:1000px) {
+            div#conterbody {
+                width: 1000px;
+            }
+
+            div#left {
+                width: 800px;
+                float: left;
+            }
+
+            p {
+                line-height: 600px;
+                margin: 0 0 20px 0;
+            }
+
+            p#left-z {
+                width: 200px;
+                float: left;
+            }
+
+            p#left-y {
+                width: 560px;
+                float: right;
+                margin-right: 20px;
+            }
+
+            p#right {
+                width: 200px;
+                float: right;
+            }
+        }
+        @media screen and (min-width:640px) and (max-width: 999px ){
+            div#conterbody {
+                width: 600px;
+            }
+
+            div#left {
+                margin: 0 0 10px 0;
+                width: 600px;
+                float: left;
+            }
+
+            p {
+                line-height: 300px;
+            }
+
+            p#left-z {
+                width: 190px;
+                margin-right: 10px;
+                float: left;
+            }
+
+            p#left-y {
+                width: 390px;
+                float: right;
+                margin-right: 0;
+            }
+
+            p#right {
+                clear: both;
+                float: none;
+                height: 50%;
+                width: 100%;
+            }
+        }
+        @media screen and (max-width:639px){
+            div#conterbody {
+                width: 600px;
+            }
+
+            div#left {
+                margin:10px 0;
+                width: 600px;
+            }
+
+            p {
+                line-height: 300px;
+            }
+
+            p#left-z {
+                width: 100%;
+            }
+
+            p#left-y {
+                width: 100%;
+            }
+
+            p#right {
+                width: 100%;
+            }
+        }
     </style>
 </head>
-<body onload="draw('canvas')">
-<canvas id="canvas" width="1300%" height="40" ></canvas>
+<body>
+<div id="conterbody">
+    <div id="left">
+        <p id="left-y">Conter</p>
+        <p id="left-z">Left</p>
+
+    </div>
+    <!--right的宽度是整体的宽度-->
+    <p id="right">Right</p>
+</div>
 </body>
 </html>
